@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfAppGridspelletje.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppGridspelletje"
+        mc:Ignorable="d"
+        x:Name="mainWindow"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="DarkGray">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,50,0,0" Width="100">
+            <Button x:Name="btnStartGame" Click="StartGame_Click" Content="Start the game" Height="25" Margin="0,0,0,5"/>
+            <TextBlock x:Name="tbTimer" Margin="0,5" Height="25" TextAlignment="Center" Background="LightGray"/>
+        </StackPanel>
+
+        <StackPanel x:Name="options" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,0,0,0" Width="100">
+            <TextBlock x:Name="tbSpeed" Text="Speed Level: 6" TextAlignment="Center" Height="25" Margin="0,5" Background="LightGray"/>
+            <Button x:Name="btnFaster" Click="ButtonFaster" Content="Faster" Height="25" Margin="0,5"/>
+            <Button x:Name="btnSlower" Click="ButtonSlower" Content="Slower" Height="25" Margin="0,5"/>
+            <Button x:Name="btnParty" Click="ButtonParty" Content="Party Mode" Height="25" Margin="0,5" Background="Red"/>
+            <ComboBox x:Name="cmbImage" SelectionChanged="ChangeCharacter">
+                <ComboBoxItem Content="Woud"/>
+                <ComboBoxItem Content="Dikzakje"/>
+                <ComboBoxItem Content="Rat"/>
+            </ComboBox>
+        </StackPanel>
+
+        <Grid x:Name="gameGrid" Margin="150,50,50,50" Background="LightBlue">
+            <Button x:Name="btnCatch" Click="ClickButton" IsEnabled="False"
+                    Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Image x:Name="btnImage"/>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
